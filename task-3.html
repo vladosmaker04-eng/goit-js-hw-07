@@ -3,21 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <title>Task 3</title>
+  <link rel="stylesheet" href="./css/common.css"/>
 </head>
 <body>
-
   <input type="text" id="name-input" placeholder="Please enter your name" />
   <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
-
-  <script>
-    const input = document.querySelector('#name-input');
-    const output = document.querySelector('#name-output');
-
-    input.addEventListener('input', (e) => {
-      const value = e.target.value.trim();
-      output.textContent = value !== '' ? value : 'Anonymous';
-    });
-  </script>
-
+  <script src="./js/task-3.js"></script>
 </body>
 </html>

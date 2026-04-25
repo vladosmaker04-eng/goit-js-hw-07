@@ -3,59 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Task 2</title>
-  <style>
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      list-style: none;
-      padding: 20px;
-      margin: 0;
-    }
-
-    .gallery li {
-      flex: 1 1 calc(33% - 16px);
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      border-radius: 4px;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/common.css"/>
 </head>
 <body>
-
   <ul class="gallery"></ul>
-
-  <script>
-    const images = [
-      {
-        url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
-        alt: "White and Black Long Fur Cat",
-      },
-      {
-        url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
-        alt: "Orange and White Koi Fish Near Yellow Koi Fish",
-      },
-      {
-        url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
-        alt: "Group of Horses Running",
-      },
-    ];
-
-    const gallery = document.querySelector('.gallery');
-
-    const markup = images.map(({ url, alt }) => `
-      <li>
-        <img src="${url}" alt="${alt}" />
-      </li>
-    `).join('');
-
-    gallery.insertAdjacentHTML('beforeend', markup);
-  </script>
-
+  <script src="./js/task-2.js"></script>
 </body>
 </html>

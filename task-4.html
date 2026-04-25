@@ -3,44 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>Task 4</title>
+  <link rel="stylesheet" href="./css/common.css"/>
 </head>
 <body>
-
   <form class="login-form">
-    <label>
-      Email
-      <input type="email" name="email" />
-    </label>
-    <label>
-      Password
-      <input type="password" name="password" />
-    </label>
+    <label>Email <input type="email" name="email" /></label>
+    <label>Password <input type="password" name="password" /></label>
     <button type="submit">Log in</button>
   </form>
-
-  <script>
-    const form = document.querySelector('.login-form');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const email = form.elements.email.value.trim();
-      const password = form.elements.password.value.trim();
-
-      if (email === '' || password === '') {
-        alert('All form fields must be filled in');
-        return;
-      }
-
-      const data = {
-        email: email,
-        password: password,
-      };
-
-      console.log(data);
-      form.reset();
-    });
-  </script>
-
+  <script src="./js/task-4.js"></script>
 </body>
 </html>

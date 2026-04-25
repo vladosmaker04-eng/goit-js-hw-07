@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task 6</title>
+  <style>
+    #boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 20px;
+      align-items: flex-end;
+    }
+
+    #controls {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="controls">
+    <input type="number" min="1" max="100" step="1" />
+    <button type="button" data-create>Create</button>
+    <button type="button" data-destroy>Destroy</button>
+  </div>
+
+  <div id="boxes"></div>
+
+  <script>
+    function getRandomHexColor() {
+      return `#${Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, 0)}`;
+    }
+
+    const input = document.querySelector('#controls input');
+    const createBtn = document.querySelector('[data-create]');
+    const destroyBtn = document.querySelector('[data-destroy]');
+    const boxes = document.querySelector('#boxes');
+
+    function createBoxes(amount) {
+      const markup = Array.from({ length: amount }, (_, i) => {
+        const size = 30 + i * 10;
+        const color = getRandomHexColor();
+        return `<div style="width:${size}px; height:${size}px; background-color:${color};"></div>`;
+      }).join('');
+
+      boxes.innerHTML = markup;
+    }
+
+    function destroyBoxes() {
+      boxes.innerHTML = '';
+    }
+
+    createBtn.addEventListener('click', () => {
+      const value = parseInt(input.value);
+
+      if (value < 1 || value > 100 || isNaN(value)) return;
+
+      createBoxes(value);
+      input.value = '';
+    });
+
+    destroyBtn.addEventListener('click', () => {
+      destroyBoxes();
+    });
+  </script>
+
+</body>
+</html>
